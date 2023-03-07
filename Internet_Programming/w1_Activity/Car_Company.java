@@ -9,8 +9,19 @@ class Car_Company{
 		//Generate the commission and store into array
 		for(int y = 0; y < name.length; y++)
 		{
-			//store commision after calc
-			commission[y] = totalSales[y];
+			//Condition statement 
+			if(totalSales[y] >= 20000){
+				// >= R20 000.00 5% of sales
+				commission[y] = totalSales[y]*0.05;
+			}else if(totalSales[y] >= 50000){
+				// >= R50 000.00 9% of sales
+				commission[y] = totalSales[y]*0.09;
+			}
+			else{
+				// < R20 000.00 3% of sales
+				commission[y] = totalSales[y] *0.03;
+			}
+			
 		}
 		
 		//Display the result here
